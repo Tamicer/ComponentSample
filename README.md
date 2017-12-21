@@ -13,7 +13,7 @@ component sdk：@Component注解作为组件声明、ComponentManager作为组�
 ## 使用方法
 
 添加依赖配置
-``
+```
 android {
     defaultConfig {
     	...
@@ -31,27 +31,34 @@ dependencies {
     annotationProcessor 'com.xpleemoon.component:component-compiler:x.x.x'
     ...
 }
-``
+```
+
 ## 实现组件
-``
+
+```
 @Component(name = "XX组件名")
 public class XXComponent implements IComponent{
 
 }
-``
+```
+
 ## 初始化sdk
-``
+
+```
 if (isDebug) {
     ComponentManager.openDebuggable();
 }
 ComponentManager.init(this);
-``
+```
+
 ## 获取组件
-``
+
+```
 ComponentManager.getInstance().getComponent("XX组件名")
-``
+```
 ## 添加混淆规则
-``
+
+```
 -keep class * implements com.xpleemoon.component.api.template.IComponentLoader
 -keep class * implements com.xpleemoon.component.api.IComponent
-``
+```
